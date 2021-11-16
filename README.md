@@ -1,5 +1,7 @@
 # blockchain-developer-bootcamp-final-project
 
+
+# project description
 I would like to build an NFT Marketplace, where artist can create and sell NFTs.
 
 1. Visitors will have to register themselves somehow on the contract.
@@ -8,3 +10,9 @@ I would like to build an NFT Marketplace, where artist can create and sell NFTs.
 4. Once the non-fungible tokens are created, customers will see them available for sales/bidding. 
 5. Customers pick the desired cryptocurrency for deals (among the ones supported).
 6. Both sides obtain notifications once the goods are sold. Finally, the service controls all transactions and movements of items.
+
+# folder structure
+
+where is frontend accessible?
+
+# public Eth address for NFT
