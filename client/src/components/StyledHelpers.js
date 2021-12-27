@@ -25,6 +25,18 @@ const StyledBtn = styled.button`
   };
 `;
 
+const StyledA = styled.a`
+  background: transparent;
+  color: papayawhip;
+  border-radius: 5px;
+  margin-left: 10px;
+  &:hover {
+    background-color: steelblue; 
+    color: #282c34;
+    cursor: pointer;
+  };
+`;
+
 const StyledForm = styled.form`
   display: block;
   justify-content: center;
@@ -91,5 +103,6 @@ export {
   StyledLbl,
   StyledInputTxt,
   StyledInputFile,
-  StyledBlock
+  StyledBlock,
+  StyledA
 }

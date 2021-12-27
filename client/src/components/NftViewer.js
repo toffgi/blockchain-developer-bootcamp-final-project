@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Text from "./Text";
 import { StyledBlock } from "./StyledHelpers";
 import { LoadingOutlined }from '@ant-design/icons';

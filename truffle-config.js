@@ -67,9 +67,9 @@ module.exports = {
       provider: () =>
         new HDWalletProvider(
           mnemonic,
-          `https://rinkeby.infura.io/v3/${process.env.ROPSTEN_INFURA_PROJECT_ID}`
+          `wss://rinkeby.infura.io/ws/v3/${process.env.RINKEBY_INFURA_PROJECT_ID}`
         ),
-      network_id: '4',
+      network_id: 4,
       gas: 5500000,
       from: "0x5B91800Ed3254BfdE5C61f2644A2D5E72CE66596",
     },
@@ -121,4 +121,5 @@ module.exports = {
   //   }
   // }
   // }
+  plugins: ['truffle-plugin-verify']
 };

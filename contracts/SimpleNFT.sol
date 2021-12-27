@@ -16,40 +16,6 @@ contract SimpleNFT is ERC721, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
     
-    /// @dev constructor for the SimpleNFT contract
-    constructor() ERC721("SimpleNFT", "SNFT") {}
-
-    /// @notice Will be concatenated with token IDs to generate the token URIs (from OpenZeppelin ERC721)
-    function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://";
-    }
-
-    /// @dev Mints the token to the msg.sender
-    /// @param uri token's URI
-    /// @param to address the NFT is minted to
-    function nftMint(address to, string memory uri) public {
-        uint256 tokenId = _tokenIdCounter.current();
-        _tokenIdCounter.increment();
-        _safeMint(to, tokenId);
-        _setTokenURI(tokenId, uri);
-    }
-
-    /// @dev Override required by Solidity, recommeded by OpenZeppelin
-    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
-        super._burn(tokenId);
-    }
-
-    /// @dev Override required by Solidity, recommeded by OpenZeppelin
-    /// @return tokenId
-    function tokenURI(uint256 tokenId)
-        public
-        view
-        override(ERC721, ERC721URIStorage)
-        returns (string memory)
-    {
-        return super.tokenURI(tokenId);
-    }
-
     /// @dev this role is not needed to use the mint function
     /// @notice creates a role to identify "patrons" who made a donation (might be used to reward with "patron badges", e.g.)
     mapping(address => bool) public patronRole;
@@ -72,6 +38,40 @@ contract SimpleNFT is ERC721, ERC721URIStorage, Ownable {
         require(_patron != address(0));
         patronRole[_patron] = true;
     }
+
+     /// @dev constructor for the SimpleNFT contract
+     constructor() ERC721("SimpleNFT", "SNFT") {}
+
+     /// @notice Will be concatenated with token IDs to generate the token URIs (from OpenZeppelin ERC721)
+     function _baseURI() internal pure override returns (string memory) {
+         return "ipfs://";
+     }
+ 
+     /// @dev Mints the token to the msg.sender
+     /// @param uri token's URI
+     /// @param to address the NFT is minted to
+     function safeMint(address to, string memory uri) public {
+         uint256 tokenId = _tokenIdCounter.current();
+         _tokenIdCounter.increment();
+         _safeMint(to, tokenId);
+         _setTokenURI(tokenId, uri);
+     }
+ 
+     /// @dev Override required by Solidity, recommeded by OpenZeppelin
+     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
+         super._burn(tokenId);
+     }
+ 
+     /// @dev Override required by Solidity, recommeded by OpenZeppelin
+     /// @return tokenId
+     function tokenURI(uint256 tokenId)
+         public
+         view
+         override(ERC721, ERC721URIStorage)
+         returns (string memory)
+     {
+         return super.tokenURI(tokenId);
+     } 
 
     /// @dev receive and fallback to allow the contract to receive data/messages
     receive() external payable {

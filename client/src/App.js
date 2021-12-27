@@ -8,6 +8,7 @@ import { StyledBlock, StyledBtn } from "./components/StyledHelpers";
 import MakeDonation from "./components/MakeDonation";
 import NftViewer from "./components/NftViewer";
 import NftForm from "./components/NftForm";
+import OpenSeaLink from "./components/OpenSeaLink";
 import "./style/App.css";
 
 class App extends Component {
@@ -108,16 +109,11 @@ class App extends Component {
     }
   };
 
-  // handleDonationChange= (e) => {
-  //   let donateAmount = e.target.value;
-  //   this.setState({donateAmount: donateAmount});
-  // };
-
   // mint token function (calls contract)
   mint = async(url) => {
     this.setState({minting: true});
-    //call the nftMint function on the contract
-    const tx = await this.state.contract.nftMint(this.state.minterAddress, url);
+    //call the safeMint function on the contract
+    const tx = await this.state.contract.safeMint(this.state.minterAddress, url);
     console.log('Minting to blockchain...');
 
     // Wait for the transaction to be confirmed, then get the token ID out of the emitted Transfer event.
@@ -212,7 +208,6 @@ render() {
         <p><Text color="papayawhip" t2> 
           Mint your NFTs by uploading images!
         </Text></p>
-
         <NftForm 
           onFormSubmit = {this.handleSubmit}
           onInputChange = {this.handleInputChange}
@@ -220,7 +215,7 @@ render() {
           nftTitle = {nftTitle}
           nftDescription ={nftDescription} 
         />
-        <br/>
+        <OpenSeaLink/>
         <MakeDonation 
           onDonateClick={this.makeDonation} 
           onInputChange={this.handleInputChange} 
@@ -249,6 +244,7 @@ render() {
             </Text>
           </StyledBtn>
         </StyledBlock>
+        <OpenSeaLink/>
         <MakeDonation 
           onDonateClick={this.makeDonation} 
           onInputChange={this.handleInputChange} 

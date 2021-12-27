@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import MMLogo from '../style/metamask-logo.svg';
 import Text from './Text';
 import { StyledBox, StyledBtn } from './StyledHelpers';
-
 import { shortenAddress } from '../utils/shortenAddress';
 
 const MetamaskLogo = styled.img.attrs({
