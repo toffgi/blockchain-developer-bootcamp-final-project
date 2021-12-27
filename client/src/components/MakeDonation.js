@@ -39,7 +39,7 @@ class MakeDonation extends React.Component {
           <StyledInputTxt name="donateAmount" type="text" value={donateAmount} min="2" onChange={this.handleInputChange}/>
           {donating ? 
             <StyledBlock>
-              <LoadingOutlined style={{color: "papayawhip"}}/>
+              <p><LoadingOutlined style={{color: "papayawhip"}}/></p>
               <Text uppercase color="papayawhip" t4>
                 Donation in progress...
               </Text></StyledBlock> 

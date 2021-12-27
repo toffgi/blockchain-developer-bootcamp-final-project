@@ -50,7 +50,7 @@ class NftForm extends React.Component {
     <br />
     {minting ? 
         <StyledBlock>
-          <LoadingOutlined style={{color: "papayawhip"}}/>
+          <p><LoadingOutlined style={{color: "papayawhip"}}/></p>
           <Text uppercase color="papayawhip" t5>
             Minting to blockchain...
           </Text>
