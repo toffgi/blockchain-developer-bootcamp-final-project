@@ -21,7 +21,7 @@ class MakeDonation extends React.Component {
   }
 
   handleInputChange(e) {
-  this.props.onInputChange(e);
+    this.props.onInputChange(e);
   }
 
   render() {
@@ -31,10 +31,10 @@ class MakeDonation extends React.Component {
     return(
     <StyledBlock>
           <StyledLbl><Text color="papayawhip" t5>
-            Make a <Text color="yellow"> 2 gwei </Text> 
-            donation to the project by clicking on the button below. 
-            <p> (if you would like to donate more <span role="img" aria-label="beers">🍻</span>  
-              modify the amount before clicking) </p>
+            You can make a <Text color="yellow"> 2 gwei </Text> 
+            donation to the project by clicking on the button below :) 
+            <p> (if you would like to donate more <span role="img" aria-label="beers">🍻 </span>
+            modify the gwei amount before clicking) </p>
           </Text></StyledLbl>
           <StyledInputTxt name="donateAmount" type="text" value={donateAmount} min="2" onChange={this.handleInputChange}/>
           {donating ? 
@@ -42,11 +42,12 @@ class MakeDonation extends React.Component {
               <p><LoadingOutlined style={{color: "papayawhip"}}/></p>
               <Text uppercase color="papayawhip" t4>
                 Donation in progress...
-              </Text></StyledBlock> 
+              </Text>
+            </StyledBlock> 
               : 
               <StyledBtn onClick={this.handleDonateClick}>
                 <Text uppercase color="282c34" t3> 
-                  Make Donation :) 
+                  Make Donation 
                 </Text>
               </StyledBtn>}
     </StyledBlock>

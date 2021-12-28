@@ -83,11 +83,20 @@ class App extends Component {
   handleInputChange = (e) => {
     let target = e.target;
     let name = target.name;
-    let value = target.value;
+    let value = target.value.toString();
     // console.log(value);
     this.setState({
       [name]: value,
     })
+
+    if( name === "donateAmount" && parseInt(value) < 2) {
+      this.setState({donateAmount: "2"});
+      return(
+        alert(
+          `Please insert an amount >= 2 to make the tx work 😇`
+        )
+      );
+    }
   };
 
   handleSubmit = async(e) => { 
