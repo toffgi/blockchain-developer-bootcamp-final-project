@@ -137,7 +137,6 @@ class App extends Component {
     let MintedMetadataImage = await this.makeGatewayURL(MintedMetadata.image);
     this.setState({nftView: MintedMetadataImage});
     this.setState({minting: false});
-    // return (tokenId, MintedMetadataImage);
   };
 
   // rewrite ipfs:// uris to dweb.link gateway URLs
