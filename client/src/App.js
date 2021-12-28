@@ -128,16 +128,16 @@ class App extends Component {
       break;
     }
     console.log(`Minted token #${tokenId}`);
+    this.setState({tokenId: tokenId}); 
+
     const MintedMetadataURI = await this.state.contract.tokenURI(tokenId);
     console.log('Minted token metadata uri: ', MintedMetadataURI);
     let MintedMetadata = await this.fetchIPFSJSON(MintedMetadataURI);
     console.log('Minted token metadata: ', MintedMetadata)
     let MintedMetadataImage = await this.makeGatewayURL(MintedMetadata.image);
-    
-    this.setState({tokenId: tokenId, nftView: MintedMetadataImage});
-    console.log(this.state.tokenId);
+    this.setState({nftView: MintedMetadataImage});
     this.setState({minting: false});
-    return (tokenId, MintedMetadataImage);
+    // return (tokenId, MintedMetadataImage);
   };
 
   // rewrite ipfs:// uris to dweb.link gateway URLs
