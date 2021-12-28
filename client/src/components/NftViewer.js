@@ -21,8 +21,13 @@ class NftViewer extends React.Component {
           </Text>
             <StyledBlock color="papayawhip">
               {this.state.loaded ? null :
-                <p><LoadingOutlined style={{color: "#282c34"}}/>
-                <Text color="#282c34" t3 italic> Please wait while your NFT is loading ... </Text></p>
+              <>
+                <p><LoadingOutlined style={{color: "#282c34"}}/></p>
+                <p><Text color="#282c34" t3 italic> Please wait while your NFT is loading ... </Text></p>
+                <p><Text color="papayawhip" t6>
+                  (It might take some minutes for your NFT to be confirmed on the blockchain) 
+                </Text></p>
+              </>
               }
               <img
                 style={this.state.loaded ? {maxWidth: "500px"} : {display: 'none'}}
