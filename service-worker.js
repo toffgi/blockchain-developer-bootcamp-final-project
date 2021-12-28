@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/blockchain-developer-bootcamp-final-project/precache-manifest.ffa3a3af9c0a48621e4c0fea56bdd78f.js"
+  "/blockchain-developer-bootcamp-final-project/precache-manifest.fd99b0f8475d76e65ab716bf63622ca7.js"
 );
 
 workbox.clientsClaim();
