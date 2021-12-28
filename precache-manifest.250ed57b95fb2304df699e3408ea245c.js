@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "64c1e52472b6ce29b07b",
+    "revision": "c4a6d0b3899e223672d4",
     "url": "/blockchain-developer-bootcamp-final-project/static/css/main.c8db3484.chunk.css"
   },
   {
-    "revision": "64c1e52472b6ce29b07b",
-    "url": "/blockchain-developer-bootcamp-final-project/static/js/main.84e3cc64.chunk.js"
+    "revision": "c4a6d0b3899e223672d4",
+    "url": "/blockchain-developer-bootcamp-final-project/static/js/main.9367c9a1.chunk.js"
   },
   {
     "revision": "07ba0b3a8d9c2087905f",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/blockchain-developer-bootcamp-final-project/static/media/opensea-logo.27cfe691.svg"
   },
   {
-    "revision": "9b0e674f0c37910cd7f649bcc13b8b34",
+    "revision": "9f5795c9ce4dedaa16ef9df4d72a996b",
     "url": "/blockchain-developer-bootcamp-final-project/index.html"
   }
 ];
