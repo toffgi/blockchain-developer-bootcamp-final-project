@@ -76,7 +76,7 @@ class App extends Component {
   };
 
   formReset = () => {
-    this.setState({tokenId: null, nftTitle: null, nftDescription: null})
+    this.setState({tokenId: null, nftTitle: '', nftDescription: ''})
   };
 
   // Form-activated functions
@@ -84,7 +84,7 @@ class App extends Component {
     let target = e.target;
     let name = target.name;
     let value = target.value;
-    console.log(value);
+    // console.log(value);
     this.setState({
       [name]: value,
     })
@@ -118,7 +118,7 @@ class App extends Component {
 
     // Wait for the transaction to be confirmed, then get the token ID out of the emitted Transfer event.
     const receipt = await tx.wait();
-    console.log(receipt);
+    // console.log(receipt);
     let tokenId = null;
     for (const event of receipt.events) {
       if (event.event !== 'Transfer') {
@@ -135,6 +135,7 @@ class App extends Component {
     let MintedMetadataImage = await this.makeGatewayURL(MintedMetadata.image);
     
     this.setState({tokenId: tokenId, nftView: MintedMetadataImage});
+    console.log(this.state.tokenId);
     this.setState({minting: false});
     return (tokenId, MintedMetadataImage);
   };
