@@ -20,11 +20,9 @@ https://toffgi.github.io/blockchain-developer-bootcamp-final-project/
 - NFT metadata storage: [IPFS](https://ipfs.io/)
 
 Wallet Support:
-
 - MetaMask
 
 Chain Support:
-
 - Rinkeby
 
 ## Setup
@@ -77,8 +75,8 @@ The user can become a "patron" of the project by making a voluntary donation to 
 2. Login with MetaMask
 3. Set a title and a description for the NFT
 4. Upload an image
-5. Click on "MINT!" button to mint the NFT to user account (smart contract call)
-6. Once the NFT tokenId is generated, the NFT is visualized (after loaded) in a new screen
+5. Click on *"MINT!"* button to mint the NFT to user account (smart contract call)
+6. Once the NFT tokenId is generated, the NFT is visualized (after loading) in a new screen
 7. The token can be listed for sale in the dedicated OpenSea collection
 
 ### TODO
