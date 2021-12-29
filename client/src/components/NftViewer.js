@@ -24,9 +24,7 @@ class NftViewer extends React.Component {
               <>
                 <p><LoadingOutlined style={{color: "#282c34"}}/></p>
                 <p><Text color="#282c34" t3 italic> Please wait while your NFT is loading ... </Text></p>
-                <p><Text color="papayawhip" t6>
-                  (It might take a few minutes) 
-                </Text></p>
+                <p><Text color="#282c34" t6> (It might take a few minutes) </Text></p>
               </>
               }
               <img
